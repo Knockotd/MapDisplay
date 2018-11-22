@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,73 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MapDisplay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="post(zip)" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uCU-lH-BFz">
+                                <rect key="frame" x="70" y="54" width="289" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="state" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kVB-Qx-cnc">
+                                <rect key="frame" x="70" y="102" width="289" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="city" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w2d-8F-oZK">
+                                <rect key="frame" x="70" y="154" width="289" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="address(street)" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MiY-3P-2is">
+                                <rect key="frame" x="70" y="207" width="289" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="062-X5-Z11">
+                                <rect key="frame" x="186" y="273" width="56" height="30"/>
+                                <state key="normal" title="지도 열기"/>
+                                <connections>
+                                    <action selector="mapDisplay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hVh-tV-9Nz"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="062-X5-Z11" firstAttribute="top" secondItem="MiY-3P-2is" secondAttribute="bottom" constant="36" id="8Ex-oV-9SP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MiY-3P-2is" secondAttribute="trailing" constant="16" id="BSx-af-06V"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="w2d-8F-oZK" secondAttribute="trailing" constant="16" id="BX9-i7-F2M"/>
+                            <constraint firstItem="uCU-lH-BFz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="34" id="F5h-m9-n4w"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uCU-lH-BFz" secondAttribute="trailing" constant="16" id="Hrn-sy-Rvi"/>
+                            <constraint firstItem="MiY-3P-2is" firstAttribute="top" secondItem="w2d-8F-oZK" secondAttribute="bottom" constant="23" id="IhH-i3-YYO"/>
+                            <constraint firstItem="w2d-8F-oZK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="70" id="KkP-4Q-4vz"/>
+                            <constraint firstItem="w2d-8F-oZK" firstAttribute="top" secondItem="kVB-Qx-cnc" secondAttribute="bottom" constant="22" id="Mod-Cl-u0Y"/>
+                            <constraint firstItem="062-X5-Z11" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="186" id="WqY-y9-EmS"/>
+                            <constraint firstItem="kVB-Qx-cnc" firstAttribute="top" secondItem="uCU-lH-BFz" secondAttribute="bottom" constant="18" id="Ypy-cX-rCz"/>
+                            <constraint firstItem="MiY-3P-2is" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="70" id="dhs-cd-RHr"/>
+                            <constraint firstItem="kVB-Qx-cnc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="70" id="eQr-2J-QxD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kVB-Qx-cnc" secondAttribute="trailing" constant="16" id="u26-3y-3fX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="062-X5-Z11" secondAttribute="trailing" constant="133" id="wqb-y1-Ib7"/>
+                            <constraint firstItem="uCU-lH-BFz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="70" id="xEA-Nx-MQm"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="address" destination="MiY-3P-2is" id="V2J-y7-Lpd"/>
+                        <outlet property="city" destination="w2d-8F-oZK" id="26v-AZ-Air"/>
+                        <outlet property="post" destination="uCU-lH-BFz" id="BjO-D5-8oC"/>
+                        <outlet property="state" destination="kVB-Qx-cnc" id="N8C-QK-9tG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>
