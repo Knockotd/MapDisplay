@@ -80,6 +80,11 @@ class ViewController: UIViewController {
         
         mapView.delegate = self
     }
+    @IBAction func moveDetail(_ sender: Any) {
+        let detailTableViewController = self.storyboard?.instantiateViewController(withIdentifier: "DetailTableViewController") as! DetailTableViewController
+        detailTableViewController.mapItems = self.matchingItem
+        self.title = "MainView"; self.navigationController?.pushViewController(detailTableViewController, animated: true)
+    }
 }
 extension ViewController:MKMapViewDelegate{
     //사용자의 위치가 변경된 경우 호출되는 메소드
