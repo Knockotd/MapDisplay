@@ -28,6 +28,12 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="ni5-sK-s0p"/>
+                                    <barButtonItem systemItem="search" id="X4D-DD-8a9">
+                                        <connections>
+                                            <action selector="zoomout:" destination="BYZ-38-t0r" id="m6J-Qz-Bd3"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="wdf-ag-VaW"/>
                                     <barButtonItem systemItem="bookmarks" id="eEM-0i-sgx">
                                         <connections>
                                             <action selector="type:" destination="BYZ-38-t0r" id="TMs-XO-CB8"/>
@@ -36,20 +42,42 @@
                                 </items>
                             </toolbar>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="OhE-4s-Q1E">
-                                <rect key="frame" x="16" y="85" width="343" height="538"/>
+                                <rect key="frame" x="16" y="99" width="343" height="524"/>
                             </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주소 검색" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5b9-9l-FGI">
+                                <rect key="frame" x="16" y="70" width="74" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xDZ-7D-Dg3">
+                                <rect key="frame" x="93" y="69" width="266" height="21"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="search:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="dsM-eZ-3rh"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="OhE-4s-Q1E" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="AnD-ca-s7d"/>
+                            <constraint firstItem="xDZ-7D-Dg3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="49" id="DHu-Dj-Uuf"/>
+                            <constraint firstItem="5b9-9l-FGI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="O9C-cZ-6Bh"/>
+                            <constraint firstItem="5b9-9l-FGI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="QeW-9E-Uka"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OhE-4s-Q1E" secondAttribute="trailing" constant="16" id="Tzl-Pw-iNL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xDZ-7D-Dg3" secondAttribute="trailing" constant="16" id="Zrh-am-bO3"/>
+                            <constraint firstItem="OhE-4s-Q1E" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="79" id="dJP-Jb-Gce"/>
+                            <constraint firstItem="xDZ-7D-Dg3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="93" id="kxm-Ed-itA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5b9-9l-FGI" secondAttribute="trailing" constant="285" id="quB-j9-EbQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="OhE-4s-Q1E" secondAttribute="bottom" constant="44" id="rWi-Sz-t0g"/>
-                            <constraint firstItem="OhE-4s-Q1E" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="65" id="w3U-ey-m20"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="mapView" destination="OhE-4s-Q1E" id="6wa-WE-Wrg"/>
+                        <outlet property="tf" destination="xDZ-7D-Dg3" id="S1j-PJ-lMC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
